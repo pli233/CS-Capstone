@@ -1,0 +1,44 @@
+# Configuration for the port our project listening to
+server:
+  port: 8080
+
+# Configuration for serving static resources
+spring:
+  mvc:
+    # Path pattern for static resources
+    static-path-pattern: /static/**
+  web:
+    resources:
+      # Location of static resources (e.g., uploaded files)
+      static-locations: /upload/
+
+  # Multipart configuration for file uploads
+  servlet:
+    multipart:
+      # Maximum file size allowed for upload
+      max-file-size: 10MB
+      # Maximum request size (including file and other form data)
+      max-request-size: 10MB
+
+  # Configuration for the data source (using Alibaba Druid connection pool)
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    # Connect to local mysql database with a database called ssm
+    url: jdbc:mysql://localhost:3306/cs639?useSSL=false&serverTimezone=UTC&charset=utf8
+    username: root
+    password: Lpy200236@2020
+
+  # Configuration for Message oriented middleware (RabbitMQ)
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+
+# Configuration for MyBatis Plus (log output)
+mybatis-plus:
+  configuration:
+    # Logging implementation for MyBatis Plus
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

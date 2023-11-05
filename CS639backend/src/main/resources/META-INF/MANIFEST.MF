@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-Class: com.pli233.CS639Backend.CS639BackendApplication
+
