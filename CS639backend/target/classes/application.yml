@@ -42,3 +42,6 @@ mybatis-plus:
   configuration:
     # Logging implementation for MyBatis Plus
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+openai:
+  apiKey: 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

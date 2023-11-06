@@ -124,6 +124,14 @@
             <scope>test</scope>
         </dependency>
 
+
+        <!-- Dependency from azure for gpt -->
+        <dependency>
+            <groupId>com.azure</groupId>
+            <artifactId>azure-ai-openai</artifactId>
+            <version>1.0.0-beta.5</version>
+        </dependency>
+
     </dependencies>
 
 

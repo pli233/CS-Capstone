@@ -2,10 +2,11 @@
 /Users/peiyuanli/Desktop/CS639/CS639backend/src/main/java/com/pli233/CS639Backend/entity/Quest.java
 /Users/peiyuanli/Desktop/CS639/CS639backend/src/main/java/com/pli233/CS639Backend/config/RabbitConfig.java
 /Users/peiyuanli/Desktop/CS639/CS639backend/src/main/java/com/pli233/CS639Backend/config/RedisConfig.java
+/Users/peiyuanli/Desktop/CS639/CS639backend/src/main/java/com/pli233/CS639Backend/config/BloomFilterConfig.java
 /Users/peiyuanli/Desktop/CS639/CS639backend/src/main/java/com/pli233/CS639Backend/controller/QuestController.java
 /Users/peiyuanli/Desktop/CS639/CS639backend/src/main/java/com/pli233/CS639Backend/impl/QuestServiceImpl.java
-/Users/peiyuanli/Desktop/CS639/CS639backend/src/main/java/com/pli233/CS639Backend/config/BloomFilterConfig.java
 /Users/peiyuanli/Desktop/CS639/CS639backend/src/main/java/com/pli233/CS639Backend/helper/BloomFilterHelper.java
+/Users/peiyuanli/Desktop/CS639/CS639backend/src/main/java/com/pli233/CS639Backend/helper/OpenAIChatService.java
 /Users/peiyuanli/Desktop/CS639/CS639backend/src/main/java/com/pli233/CS639Backend/helper/RedisUtil.java
 /Users/peiyuanli/Desktop/CS639/CS639backend/src/main/java/com/pli233/CS639Backend/service/QuestService.java
 /Users/peiyuanli/Desktop/CS639/CS639backend/src/main/java/com/pli233/CS639Backend/CS639BackendApplication.java

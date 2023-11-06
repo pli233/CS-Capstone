@@ -24,8 +24,8 @@ public interface QuestMapper {
             @Result(property = "updatedBy", column = "updated_by")
     })
 
-    @Insert("INSERT INTO quest (id, status, content, interpreted_content, created_date, created_by, updated_date, updated_by)\n" +
-            "VALUES (#{id}, #{status}, #{content}, #{interpretedContent}, now(), #{createdBy}, now(), #{updatedBy})")
+    @Insert("INSERT INTO quest (status, content, interpreted_content, created_date, created_by, updated_date, updated_by)\n" +
+            "VALUES (#{status}, #{content}, #{interpretedContent}, now(), #{createdBy}, now(), #{updatedBy})")
     int insertQuest(Quest quest);
 
     @Delete("DELETE FROM quest WHERE id = #{id}")
