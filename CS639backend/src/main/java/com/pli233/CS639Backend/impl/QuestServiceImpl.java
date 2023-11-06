@@ -62,7 +62,11 @@ public class QuestServiceImpl implements QuestService {
         System.out.println("::> Calling up an insertion for Quest" + quest.toString());
         //1. Insert elements into mysql
         String questId = quest.getId();
-        Quest target = questMapper.selectQuestById(questId);
+
+        if (questId != null) {
+            Quest target = questMapper.selectQuestById(questId);
+            // Rest of your code...
+        }
         int result = questMapper.insertQuest(quest);
 
         //2.If we do insert some value into mysql or the value is existed,
