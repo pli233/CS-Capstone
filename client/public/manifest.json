@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "My Chrome Extension",
+  "version": "1.0",
+  "description": "A React app as Chrome Extension",
+  "permissions": ["activeTab", "storage", "contextMenus", "tabs", "http://*/*", "https://*/*"],
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "logo192.png",
+      "48": "logo192.png",
+      "128": "logo192.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["static/js/contentScript.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["static/js/background.js"],
+    "persistent": false
+  },
+  "web_accessible_resources": ["static/js/*.js"]
+}
