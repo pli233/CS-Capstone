@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "My Chrome Extension",
+  "name": "Easy Doctor notes",
   "version": "1.0",
   "description": "A React app as Chrome Extension",
   "permissions": ["activeTab", "storage", "contextMenus", "tabs", "http://*/*", "https://*/*"],
