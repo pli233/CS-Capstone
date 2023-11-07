@@ -3,86 +3,88 @@ const mongoose = require('mongoose');
 const ProfileSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'user'
+    ref: 'user',
   },
   name: {
-    type: String
+    type: String,
   },
   location: {
-    type: String
+    type: String,
   },
   status: {
     type: String,
-    required: true
+    required: true,
   },
   bio: {
-    type: String
+    type: String,
   },
-  cats: [{
-    name: {
-      type: String,
-      required: true
+  cats: [
+    {
+      name: {
+        type: String,
+        required: true,
+      },
+      birthday: {
+        type: Date,
+        required: true,
+      },
+      breed: {
+        type: String,
+      },
+      sex: {
+        type: Boolean,
+      },
+      avatar: {
+        type: String,
+      },
+      uuid: {
+        type: String,
+        require: true,
+      },
+      created: {
+        type: Date,
+        default: Date.now,
+      },
+      updated: {
+        type: Date,
+        default: Date.now,
+      },
     },
-    birthday: {
-      type: Date,
-      required: true
-    },
-    breed: {
-      type: String,
-    },
-    sex: {
-      type: Boolean,
-    },
-    avatar: {
-      type: String,
-    },
-    uuid: {
-      type: String,
-      require: true
-    },
-    created: {
-      type: Date,
-      default: Date.now
-    },
-    updated: {
-      type: Date,
-      default: Date.now
-    },
-  }],
+  ],
   social: {
     youtube: {
-      type: String
+      type: String,
     },
     twitter: {
-      type: String
+      type: String,
     },
     facebook: {
-      type: String
+      type: String,
     },
     linkedin: {
-      type: String
+      type: String,
     },
     instagram: {
-      type: String
-    }
+      type: String,
+    },
   },
   date: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   updated: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   visible: {
     type: Boolean,
     require: true,
-    default: true
+    default: true,
   },
   deleted: {
     type: Boolean,
     require: true,
-    default: false
+    default: false,
   },
 });
 
