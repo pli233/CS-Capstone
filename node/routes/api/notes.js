@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const { downloadFileFromS3 } = require('../../utils/s3File');
 const { check, validationResult } = require('express-validator');
 const multer = require('multer');
 const upload = multer();
