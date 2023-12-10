@@ -1,6 +1,7 @@
 # dependencies
 Frontend/node_modules
 Frontend/client/node_modules
+floating-chatbot/node_modules
 # testing
 /coverage
 *.code-snippets
