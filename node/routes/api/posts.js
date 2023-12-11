@@ -75,7 +75,7 @@ router.post('/', auth, check('text', 'Text is required').notEmpty(), async (req,
       user: req.user.id,
       aiResponse: aiResponse,
     });
-
+    await newPost.save();
     res.json(newPost);
     // const post = await newPost.save();
     // setTimeout(async () => {
@@ -141,7 +141,7 @@ router.delete('/:id', [auth, checkObjectId('id')], async (req, res) => {
       return res.status(401).json({ msg: 'User not authorized' });
     }
 
-    await post.remove();
+    await Post.findByIdAndRemove(req.params.id);
 
     res.json({ msg: 'Post removed' });
   } catch (err) {

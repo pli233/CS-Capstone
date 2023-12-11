@@ -14,9 +14,6 @@ const Login = ({ logout, isAuthenticated, setRoute }) => {
 
   return (
     <div>
-      <p className="lead">
-        <i className="fas fa-user" /> Logout Your Account
-      </p>
       <Button className="btn btn-primary" onClick={onSubmit}>
         Logout
       </Button>

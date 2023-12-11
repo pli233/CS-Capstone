@@ -526,6 +526,24 @@ button {
   margin-bottom: 0.5rem;
 }
 
+.icon-box {
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.icon-box:hover {
+  opacity: 0.6;
+}
+
+.hover-text-primary:hover {
+  color: var(--primary-color-no-conflict);
+}
+
 /* Mobile Styles */
 @media (max-width: 700px) {
   .container {

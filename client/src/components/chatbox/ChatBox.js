@@ -1,5 +1,5 @@
 // src/ChatBox.js
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { FaComments } from 'react-icons/fa';
 import { FaUserDoctor } from 'react-icons/fa6';
 import { Button } from 'antd';
@@ -12,6 +12,7 @@ import Register from '../auth/Register';
 import Logout from '../auth/Logout';
 import { addPost } from '../../actions/post';
 import MessageBubble from './MessageBubble';
+import Posts from '../posts/Posts';
 import Loading from './Loading';
 import ScreenshotTool from './ScreenshotTool';
 import './ChatBox.css';
@@ -25,13 +26,20 @@ const ChatBox = ({ auth: { isAuthenticated }, logout, addPost }) => {
   const [loading, setLoading] = useState(false);
   const [imagePreview, setImagePreview] = useState(null);
   const bodyContainerRef = useRef(null);
+  const [search, setSearch] = useState('');
   // ...其他代码
-
+  // 使用示例
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]); // 当消息数组改变时调用
   const setRoute = (route) => {
     console.log(route);
     setRouter(route);
   };
-
+  const handleSetMessages = (messages) => {
+    setMessages((prevMessages) => [...prevMessages, ...messages]);
+    scrollToBottom();
+  };
   const toggleChat = () => {
     setIsOpen(!isOpen);
   };
@@ -41,6 +49,7 @@ const ChatBox = ({ auth: { isAuthenticated }, logout, addPost }) => {
   };
 
   const handleKeyDown = (e) => {
+    if (loading) return; // 如果正在加载，则不处理任何按键
     if (e.key === 'Enter' && !e.shiftKey) {
       // 检查是否是回车键且没有按住Shift键
       e.preventDefault(); // 阻止默认的回车键行为，例如插入换行符
@@ -73,9 +82,13 @@ const ChatBox = ({ auth: { isAuthenticated }, logout, addPost }) => {
 
   const scrollToBottom = () => {
     if (bodyContainerRef.current) {
-      bodyContainerRef.current.scrollTop = bodyContainerRef.current.scrollHeight;
+      bodyContainerRef.current.scrollTo({
+        top: bodyContainerRef.current.scrollHeight,
+        behavior: 'smooth', // 添加这个属性来实现平滑滚动
+      });
     }
   };
+
   const handleSendMessage = () => {
     if (newMessage.trim() === '') return;
 
@@ -147,6 +160,11 @@ const ChatBox = ({ auth: { isAuthenticated }, logout, addPost }) => {
                 <Logout setRoute={setRoute} />
               </>
             )}
+            {router === 'history' && (
+              <>
+                <Posts search={search} setRoute={setRoute} handleSetMessages={handleSetMessages} />
+              </>
+            )}
           </div>
 
           {imagePreview && (
@@ -174,6 +192,21 @@ const ChatBox = ({ auth: { isAuthenticated }, logout, addPost }) => {
                 <Button disabled={loading} className="margin-left" onClick={handleSendMessage}>
                   Send
                 </Button>
+
+                {/* <ScreenshotTool /> */}
+              </div>
+            </>
+          )}
+          {router === 'history' && isAuthenticated && (
+            <>
+              <div className="input-container">
+                <textarea
+                  className="input-container-textarea"
+                  type="text"
+                  placeholder="Type your search"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                />
 
                 {/* <ScreenshotTool /> */}
               </div>
