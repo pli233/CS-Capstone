@@ -22,5 +22,10 @@
     "scripts": ["static/js/background.js"],
     "persistent": false
   },
-  "web_accessible_resources": ["static/js/*.js"]
+  "web_accessible_resources": [
+    "static/js/*.js",
+    "static/css/*",
+    "static/media/*",
+    "asset-manifest.json"
+  ]
 }

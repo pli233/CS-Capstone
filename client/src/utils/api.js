@@ -8,7 +8,7 @@ const config = require('../env.json');
 const api = axios.create({
   baseURL: config.REACT_APP_APIENDPOINT,
   headers: {
-    'Content-Type': 'multipart/form-data',
+    'Content-Type': 'application/json',
   },
 });
 /*
