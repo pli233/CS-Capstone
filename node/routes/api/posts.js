@@ -9,7 +9,7 @@ const checkObjectId = require('../../middleware/checkObjectId');
 
 const OpenAI = require('openai');
 const openai = new OpenAI({
-  apiKey: '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', // defaults to process.env["OPENAI_API_KEY"]
+  apiKey: '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', // defaults to process.env["OPENAI_API_KEY"]
 });
 // @route    POST api/posts
 // @desc     Create a post
