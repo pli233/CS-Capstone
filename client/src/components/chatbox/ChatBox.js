@@ -109,11 +109,13 @@ const ChatBox = ({ auth: { isAuthenticated }, logout, addPost }) => {
     setMessages((prevMessages) => [...prevMessages, { text: userRequest, type: 'user' }]);
     setLoading(true);
     scrollToBottom();
-    const post = await addPost({ text: userMessage, imageUrl });
-    setLoading(false);
-    console.log(post);
-    const botResponse = post.aiResponse;
-    setMessages((prevMessages) => [...prevMessages, { text: botResponse, type: 'bot' }]);
+    try {
+      const post = await addPost({ text: userMessage, imageUrl });
+      setLoading(false);
+      console.log(post);
+      const botResponse = post.aiResponse;
+      setMessages((prevMessages) => [...prevMessages, { text: botResponse, type: 'bot' }]);
+    } catch (err) {}
     scrollToBottom();
   };
 
