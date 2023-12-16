@@ -176,3 +176,24 @@ Gather user feedback to understand their experience with the floating chatbot an
 Incorporate Additional File Formats:
 Consider expanding the file formats supported by the translation plugin. This could involve incorporating compatibility with various document types beyond PDF, ensuring that users can seamlessly translate medical content from a broader range of sources.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
