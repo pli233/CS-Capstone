@@ -5,7 +5,7 @@ Easy doctor is a Chrome extention to help patients or relatives to simplify the 
 ## Dependencies
 
 ### Node.js 18
-### Mongodb 18
+### Mongodb
 ### React.js
 
 ## Installation
